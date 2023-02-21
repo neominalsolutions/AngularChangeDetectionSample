@@ -33,6 +33,8 @@ export class OnpushParentComponent implements OnInit, DoCheck {
     const random = Math.round(Math.random() * 100);
     this.numbers.push(random);
     this.child?.add(random);
+
+    console.log('numbers', this.numbers);
   }
 
   ngOnInit() {}

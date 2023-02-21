@@ -1,4 +1,10 @@
-import { Component, DoCheck, HostListener, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DoCheck,
+  HostListener,
+  OnInit,
+} from '@angular/core';
 
 @Component({
   selector: 'app-default-child1',
