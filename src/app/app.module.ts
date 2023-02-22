@@ -10,6 +10,10 @@ import { OnpushChild1Component } from './components/onpush/onpush-child1/onpush-
 import { OnpushChild2Component } from './components/onpush/onpush-child2/onpush-child2.component';
 import { OnpushParentItemsComponent } from './components/onpush/onpush-parent-items/onpush-parent-items.component';
 import { OnpushParentComponent } from './components/onpush/onpush-parent/onpush-parent.component';
+import { ApiLoggerService } from './services/api-logger.service';
+import { ConsoleLoggerService } from './services/console-logger.service';
+import { Logger } from './services/ILogger';
+import { IsDevelopment } from './services/ILogger';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,40 @@ import { OnpushParentComponent } from './components/onpush/onpush-parent/onpush-
     OnpushParentItemsComponent,
   ],
   imports: [BrowserModule, CommonModule],
-  providers: [],
+  providers: [
+    {
+      provide: Logger,
+      useClass: ApiLoggerService, // DI IOC
+    },
+    {
+      provide: 'apiKey',
+      useValue: 'xyz',
+    },
+    {
+      provide: 'oldValue',
+      useExisting: 'new',
+    },
+    {
+      provide: 'new',
+      useValue: 'new',
+    },
+    {
+      provide: 'IsDevelopment',
+      useValue: true,
+    },
+    {
+      provide: Logger,
+      useFactory: (IsDevelopment: boolean) => {
+        console.log('isDevelopment', IsDevelopment);
+        const type = IsDevelopment
+          ? new ConsoleLoggerService()
+          : new ApiLoggerService();
+        console.log('type', type);
+        return type;
+      },
+      deps: ['IsDevelopment'],
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
