@@ -1,9 +1,28 @@
+
+<!-- 1.yöntem -->
+<ng-container *ngxPermissionsExcept="['ADMIN']">
+    Admin Hariç
+</ng-container>
+<!-- 2.Yöntem -->
+<ng-template [ngxPermissionsOnly]="['MANAGER']">
+    Sadece manager
+</ng-template>
+
+<div *ngxPermissionsOnly="['GUEST']">
+    Sadece GUEST
+</div>
+
 <div [ngStyle]="{'width':'100%'}">
 
     <app-default-parent [ngStyle]="{'width':'40%','display':'inline-block'}"></app-default-parent>
 
 
     <app-onpush-parent [ngStyle]="{'width':'40%','margin':'10px','display':'inline-block'}"></app-onpush-parent>
+
+
+
+
+
 
 </div>
 
