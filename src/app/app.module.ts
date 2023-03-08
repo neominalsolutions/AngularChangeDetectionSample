@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { AppComponent } from './app.component';
 import { DefaultChild1Component } from './components/default/default-child1/default-child1.component';
@@ -11,6 +10,7 @@ import { OnpushChild1Component } from './components/onpush/onpush-child1/onpush-
 import { OnpushChild2Component } from './components/onpush/onpush-child2/onpush-child2.component';
 import { OnpushParentItemsComponent } from './components/onpush/onpush-parent-items/onpush-parent-items.component';
 import { OnpushParentComponent } from './components/onpush/onpush-parent/onpush-parent.component';
+import { TestOnPushComponent } from './components/test-on-push/test-on-push.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { OnpushParentComponent } from './components/onpush/onpush-parent/onpush-
     OnpushChild1Component,
     OnpushChild2Component,
     OnpushParentItemsComponent,
+    TestOnPushComponent,
   ],
   imports: [BrowserModule, CommonModule],
   providers: [],

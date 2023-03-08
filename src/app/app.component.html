@@ -1,16 +1,4 @@
 
-<!-- 1.yöntem -->
-<ng-container *ngxPermissionsExcept="['ADMIN']">
-    Admin Hariç
-</ng-container>
-<!-- 2.Yöntem -->
-<ng-template [ngxPermissionsOnly]="['MANAGER']">
-    Sadece manager
-</ng-template>
-
-<div *ngxPermissionsOnly="['GUEST']">
-    Sadece GUEST
-</div>
 
 <div [ngStyle]="{'width':'100%'}">
 
@@ -21,9 +9,8 @@
 
 
 
-
-
-
 </div>
+
+<button (click)="rootClick()">Root Click</button>
 
 

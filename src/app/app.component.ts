@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { NgxPermissionsService, NgxRolesService } from 'ngx-permissions';
-import { NgxPermissionsGuard } from 'ngx-permissions/lib';
+import { Component, OnInit } from '@angular/core';
+
+// Shift Alt + OS
 
 @Component({
   selector: 'app-root',
@@ -12,4 +12,6 @@ export class AppComponent implements OnInit {
 
   constructor() {}
   ngOnInit(): void {}
+
+  rootClick() {}
 }

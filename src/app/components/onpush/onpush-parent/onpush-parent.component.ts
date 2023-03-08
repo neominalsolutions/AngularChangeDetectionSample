@@ -14,7 +14,6 @@ import { OnpushParentItemsComponent } from '../onpush-parent-items/onpush-parent
   selector: 'app-onpush-parent',
   templateUrl: './onpush-parent.component.html',
   styleUrls: ['./onpush-parent.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OnpushParentComponent implements OnInit, DoCheck {
   numbers: Array<number> = [];

@@ -1,14 +1,13 @@
 import {
+  ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
   DoCheck,
   Input,
-  OnInit,
-  ChangeDetectionStrategy,
   OnChanges,
+  OnInit,
   SimpleChanges,
 } from '@angular/core';
-import { NgxPermissionsService } from 'ngx-permissions';
 
 @Component({
   selector: 'app-onpush-parent-items',
@@ -19,10 +18,7 @@ import { NgxPermissionsService } from 'ngx-permissions';
 export class OnpushParentItemsComponent implements OnInit, DoCheck, OnChanges {
   @Input() numbers: Array<number> = [];
 
-  constructor(
-    private changeDetectorRef: ChangeDetectorRef,
-    private ps: NgxPermissionsService
-  ) {}
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes', changes);
@@ -34,13 +30,13 @@ export class OnpushParentItemsComponent implements OnInit, DoCheck, OnChanges {
 
   add(random: number) {
     this.numbers.push(random);
+    // this.numbers = [... this.numbers];
+    // const a = Object.assign({})
     // this.changeDetectorRef.markForCheck();
     this.changeDetectorRef.detectChanges();
   }
 
-  ngOnInit() {
-    console.log('ps', this.ps.getPermissions());
-  }
+  ngOnInit() {}
 }
 
 // child componentler parent componentlerden gelen input değerlerine göre kendi statelerini güncelleyebilmek için changeDetectorRef servis üzerinden manuel olarak markForCheck veya detectChanges methodu ile change detection özelliğini açmak zorundadır. Aksi taktirde state değişimi görünmeyecektir.
