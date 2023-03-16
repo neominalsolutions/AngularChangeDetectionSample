@@ -31,7 +31,9 @@ export class OnpushParentComponent implements OnInit, DoCheck {
   random() {
     const random = Math.round(Math.random() * 100);
     this.numbers.push(random);
-    this.child?.add(random);
+    // this.child?.add(random);
+    // js kaynaklı bir bug dan dolayı angular change detection yöntemi yapamıyor. dizi ve obje ile çalışırken  [... ] {... } operatörünü kullanalım.
+    this.numbers = [...this.numbers];
 
     console.log('numbers', this.numbers);
   }

@@ -1,5 +1,6 @@
 import {
   ChangeDetectionStrategy,
+  ChangeDetectorRef,
   Component,
   DoCheck,
   HostListener,
@@ -15,11 +16,12 @@ import {
 export class OnpushChild1Component implements OnInit, DoCheck {
   counter: number = 0;
 
-  constructor() {}
+  constructor(private ch: ChangeDetectorRef) {}
 
   ngDoCheck(): void {
     this.counter++;
-    console.log('OnpushChild1Component', this.counter);
+    // this.ch.detectChanges();
+    // state değişiklikleri hakkında haber almak istiyorum.
   }
 
   ngOnInit() {}

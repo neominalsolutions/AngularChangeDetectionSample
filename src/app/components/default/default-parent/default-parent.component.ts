@@ -9,9 +9,7 @@ export class DefaultParentComponent implements OnInit, DoCheck {
   numbers: Array<number> = [];
 
   constructor() {}
-  ngDoCheck(): void {
-    console.log('default-parent-ChangeDetection');
-  }
+  ngDoCheck(): void {}
 
   random() {
     const random = Math.round(Math.random() * 100);

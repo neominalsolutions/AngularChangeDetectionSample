@@ -18,6 +18,8 @@ import {
 export class OnpushParentItemsComponent implements OnInit, DoCheck, OnChanges {
   @Input() numbers: Array<number> = [];
 
+  // Bir component OnPush tanımlanmış ise ama o componente bir @ınput geçisi varsa [numbers]=[1,2,4,5] bu durumda component change detection'ı sürdürür. OnPush olsa dahi sürdürür.
+
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -29,11 +31,11 @@ export class OnpushParentItemsComponent implements OnInit, DoCheck, OnChanges {
   }
 
   add(random: number) {
+    // method vasıtası ile numbers dizisini güncellemiş olduk
     this.numbers.push(random);
     // this.numbers = [... this.numbers];
-    // const a = Object.assign({})
-    // this.changeDetectorRef.markForCheck();
-    this.changeDetectorRef.detectChanges();
+
+    //this.changeDetectorRef.detectChanges();
   }
 
   ngOnInit() {}

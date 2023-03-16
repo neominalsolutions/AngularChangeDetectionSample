@@ -11,6 +11,7 @@ import { OnpushChild2Component } from './components/onpush/onpush-child2/onpush-
 import { OnpushParentItemsComponent } from './components/onpush/onpush-parent-items/onpush-parent-items.component';
 import { OnpushParentComponent } from './components/onpush/onpush-parent/onpush-parent.component';
 import { TestOnPushComponent } from './components/test-on-push/test-on-push.component';
+import { Test1PushComponent } from './components/test1-push/test1-push.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { TestOnPushComponent } from './components/test-on-push/test-on-push.comp
     OnpushChild2Component,
     OnpushParentItemsComponent,
     TestOnPushComponent,
+    Test1PushComponent,
   ],
   imports: [BrowserModule, CommonModule],
   providers: [],

@@ -1,5 +1,3 @@
-
-
 <h1>On Push Sample </h1>
 
 <app-onpush-child1></app-onpush-child1>
@@ -10,7 +8,9 @@
 
 <div>
 
-  <app-onpush-parent-items #childItem></app-onpush-parent-items>
+  Numbers: {{numbers }}
+
+  <app-onpush-parent-items [numbers]="numbers" #childItem></app-onpush-parent-items>
 
   <button (click)="random()">Rastgele Sayı</button>
 

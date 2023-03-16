@@ -21,7 +21,7 @@ export class OnpushChild2Component implements OnInit, DoCheck {
   ngDoCheck(): void {
     this.counter++;
     // state güncellemesi yap.
-    this.changeDetectorRef.detectChanges();
+    // this.changeDetectorRef.detectChanges();
   }
 
   ngOnInit() {}

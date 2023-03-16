@@ -21,6 +21,20 @@ export class DefaultChild1Component implements OnInit, DoCheck {
 
   ngOnInit() {}
 
+  // angularda js eventlere bağlanmak istersek, angular event yapıp artık dinlemeye başlıyoruz
+  // componente bir event bind etmek için kullanılan bir teknik.
   @HostListener('mousemove', ['$event'])
-  MouseMove(event: MouseEvent): void {}
+  MouseMove(event: MouseEvent): void {
+    //console.log('event', event);
+  }
+
+  // @HostListener('window:keyup', ['$event'])
+  // KeyPress(event: Event): void {
+  //   console.log('keydown-event', event);
+  // }
+
+  @HostListener('dblclick', ['$event'])
+  dbClick(event: Event): void {
+    //console.log('dblclick-event', event);
+  }
 }
